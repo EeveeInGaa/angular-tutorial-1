@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InfoboxComponent implements OnInit {
 
   text: string = "additional Info-Text on our info box!";
-  toggleText: string = "Hide"
+  toggleText: string = "Show"
   hidden: boolean = true;
 
   constructor() { }
@@ -19,9 +19,9 @@ export class InfoboxComponent implements OnInit {
   toggle() {
     this.hidden = !this.hidden;
     if(this.hidden === false) {
-      this.toggleText = "Show"
-    } else {
       this.toggleText = "Hide"
+    } else {
+      this.toggleText = "Show"
     }
   }
 }

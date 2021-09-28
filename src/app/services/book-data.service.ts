@@ -9,6 +9,6 @@ export class BookDataService {
   constructor(private http: HttpClient) { }
 
   getBooks() {
-    return this.http.get("http://localhost:4730/books");
+    return this.http.get<any[]>("http://localhost:4730/books");
   }
 }

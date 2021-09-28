@@ -9,7 +9,7 @@ import { BookDataService } from '../../services/book-data.service';
 })
 export class BookListComponent implements OnInit {
 
-  books$: Observable<Object>;
+  readonly books$: Observable<any[]>;
 
   constructor(private bookData: BookDataService) { 
     this.books$ = this.bookData.getBooks();
