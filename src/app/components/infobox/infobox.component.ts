@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-infobox',
@@ -23,5 +24,19 @@ export class InfoboxComponent implements OnInit {
     } else {
       this.toggleText = "Show"
     }
+  }
+
+  formGroup1 = new FormGroup({
+    formControl1: new FormControl(''),
+    formControl2: new FormControl(''),
+    nestedFormGroup: new FormGroup({
+      nestedFormControl1: new FormControl(''),
+      nestedFormControl2: new FormControl(''),
+    }),
+    reqFormControl3: new FormControl('', Validators.required),
+  })
+
+  submitButton(): void {
+    console.log('test1:' + ' ' + this.formGroup1.get('formControl1')?.value)
   }
 }

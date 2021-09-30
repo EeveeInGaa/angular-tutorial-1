@@ -1,2 +1,16 @@
 <button (click)="toggle()">{{toggleText}}</button>
 <p [hidden]="hidden">{{text}}</p>
+
+<form [formGroup]="formGroup1">
+    <div>
+        <p>test1:</p>
+        <input type="text" name="test1.1" formControlName="formControl1"><br>
+        <input type="text" name="test1.2" formControlName="formControl2">
+    </div><br>
+    <div formGroupName="nestedFormGroup">
+        <input type="text" name="test2.1" formControlName="nestedFormControl1"><br>
+        <input type="text" name="test2.2" formControlName="nestedFormControl2">
+    </div>
+
+    <button (click)="submitButton()">Submit</button>
+</form>
